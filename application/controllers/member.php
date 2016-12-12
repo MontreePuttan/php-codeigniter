@@ -90,5 +90,13 @@ class Member extends CI_Controller {
         redirect("member", "refresh");
         exit();
     }
+    
+    public function get_test_helper(){
+        $this->load->helper('test');
+        
+        get_date();
+        echo "<br>";
+        get_time();
+    }
 
 }
