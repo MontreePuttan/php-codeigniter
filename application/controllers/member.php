@@ -31,8 +31,8 @@ class Member extends CI_Controller {
     
     public function change($type)
     {
-        $this->session->get_userdata('lang',$type);
-        redirect("","refresh");
+        $this->session->set_userdata('lang',$type);
+        redirect("member","refresh");
     }
 
     public function add() {

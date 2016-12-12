@@ -9,11 +9,11 @@
     <h1><?php echo $this->lang->line("world"); ?></h1>
     <p>
         <?php
-            echo anchor("welcome/change/thailand","ไทย");
+            echo anchor("member/change/thailand","ไทย");
         ?>
         &nbsp;
         <?php
-            echo anchor("welcome/change/english","English");
+            echo anchor("member/change/english","English");
         ?>
     </p>
     <h1>Show Member</h1>
