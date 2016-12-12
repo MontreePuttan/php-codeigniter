@@ -5,6 +5,17 @@
 	<title>Document</title>
 </head>
 <body>
+    <h1><?php echo $this->lang->line("hello"); ?></h1>
+    <h1><?php echo $this->lang->line("world"); ?></h1>
+    <p>
+        <?php
+            echo anchor("welcome/change/thailand","ไทย");
+        ?>
+        &nbsp;
+        <?php
+            echo anchor("welcome/change/english","English");
+        ?>
+    </p>
     <h1>Show Member</h1>
     <?php echo anchor("member/add","Add"); ?>
     <table border="1">

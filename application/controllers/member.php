@@ -7,6 +7,14 @@ class Member extends CI_Controller {
     }
 
     public function index() {
+        
+        //$this->lang->load("english");
+        
+        //$this->lang->load("thailand","thailand");
+        
+        $lang = $this->session->userdata("lang")==null?"english":$this->session->userdata('lang');
+        
+        $this->lang->load($lang,$lang);
 
         $this->load->library('pagination');
 
@@ -19,6 +27,12 @@ class Member extends CI_Controller {
 
         $data['rs'] = $this->db->select("*")->from("tb_member")->where("member_status='1'")->limit($config['per_page'],$this->uri->segment(3))->get()->result_array();
         $this->load->view("member/index", $data);
+    }
+    
+    public function change($type)
+    {
+        $this->session->get_userdata('lang',$type);
+        redirect("","refresh");
     }
 
     public function add() {
